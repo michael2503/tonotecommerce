@@ -84,18 +84,4 @@ class OrderController extends Controller
     }
 
 
-    public function downloadInvoice($orderNumber){
-        $order = Order::where('order_number', $orderNumber)->first();
-        if($order){
-            $catInfo = json_decode($order->product_json);
-            $pdf = PDF::loadView('user/invoiceView', [
-                'order' => $order,
-                'catInfos' => $catInfo,
-            ]);
-
-            return $pdf->download(strtolower($order->order_number).'-'. Str::random(5) .'-invoice.pdf');
-        }
-    }
-
-
 }

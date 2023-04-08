@@ -46,7 +46,6 @@ Route::middleware('auth')->group(function () {
             Route::get('/', 'index')->name('orders');
             Route::get('/checkout', 'checkout')->name('checkout');
             Route::get('/details/{orderNumber}', 'orderDetails')->name('orderDetails');
-            Route::get('/download-invoice/{orderNumber}', 'downloadInvoice')->name('downloadInvoice');
             Route::post('/create', 'createOrder')->name('createOrder');
         });
     });

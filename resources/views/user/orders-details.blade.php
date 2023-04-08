@@ -102,9 +102,6 @@
                                     <p>Order On</p>
                                     <p>{{ date('M d, Y', strtotime($order->created_at)) }}</p>
                                 </div>
-                                <div class="text-center mt-3 mb-3">
-                                    <a href="{{ route('downloadInvoice', $order->order_number) }}" class="btn btn-success btn-sm">Download Invoice</a>
-                                </div>
                             </div>
                         </div>
                     </div>

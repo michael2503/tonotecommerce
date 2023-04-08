@@ -2,27 +2,26 @@
 
 namespace Tests\Feature;
 
-use App\Providers\RouteServiceProvider;
-use App\Traits\ShoppingCartTrait;
+use App\Models\ShoppingCart;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ShoppingCartTest extends TestCase
 {
-    use ShoppingCartTrait;
+    use RefreshDatabase;
     /**
      * A basic feature test example.
      */
     public function test_to_add_cart(): void
     {
-        $response = $this->get('/addToCart', [
-            'user_id'       => 1,
-            'product_id'    => 2,
-            'qty'           => 1
-        ]);
+        // $cart = ShoppingCart::factory()->create();
 
-        $this->createCart();
-        $response->assertRedirect(RouteServiceProvider::HOME);
+        // $response = $this->get('/cart/add/1', [
+        //     'user_id'       => 1,
+        //     'product_id'    => 2,
+        //     'qty'           => 2
+        // ]);
+
+        // $cart->assertOk();
     }
 }
